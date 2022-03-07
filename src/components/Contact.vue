@@ -114,6 +114,8 @@
 <script>
 import config from "../../config";
 import emailjs from "emailjs-com";
+import{ init } from '@emailjs/browser';
+init(config.emailjs.userID);
 
 import Snackbar from "./helpers/Snackbar";
 
@@ -155,8 +157,17 @@ export default {
           user_email: this.email,
           from_name: this.name,
           message_html: this.text,
-          to_name: "Mahy Mohab",
+          to_name: "FUASHI LOT-BILL",
         };
+
+        // emailjs.send(
+        //   "service_ewo2gp8",
+        //   "contact_form",{
+        //   from_name: ,
+        //   to_name: "FUASHI_LOT-BILL",
+        //   message_html: "jUST TESTING",
+        //   user_email: "lotbill.fuashi@gmail.com",
+        // });
 
         emailjs
           .send(

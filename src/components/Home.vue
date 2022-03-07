@@ -1,7 +1,13 @@
 <template>
   <div
     :class="{ 'bg-white': !nightMode, 'bg-dark': nightMode }"
-    class="pt-5 p-st"
+    class="p-st"
+    :style="{
+      'background-image': `url('${picture}')`,
+      'background-repeat': 'no-repeat',
+      'background-position': 'center center',
+      'background-size': 'cover'
+    }"
   >
     <div
       class="container"
@@ -11,46 +17,54 @@
     >
       <div class="row align-items-center">
         <div class="col-xl-6 col-bg-6 col-md-6 col-sm-12 text-center">
-          <img :src="picture" />
+          <img :src="picture" class="invisible"/>
         </div>
         <div class="col-xl-6 col-bg-6 col-md-6 col-sm-12 pt-5">
           <span
             class="home-title"
             :class="{ pgray: !nightMode, 'text-light': nightMode }"
-            >Welcome to my portfolio!</span
+            :style="{ color: 'rgba(255, 255, 255, 0.8)'}"
+            >Welcome to buildit!</span
           >
           <div>
-            <p v-html="description"></p>
+            <p :style="{ color: 'rgba(255, 255, 255, 0.8)', 'font-weight': 500}" v-html="description"></p>
           </div>
           <div class="text-center pb-4">
             <button
               class="btn btn-outline-secondary mx-2 "
               @click="open('linkedin')"
               v-tooltip.bottom="'LinkedIn'"
+              :style="{ 
+                color: 'rgba(255, 255, 255, 0.8)',
+                'border-color': 'rgba(255, 255, 255, 0.8)'
+              }"
             >
               <i class="fab fa-linkedin"></i>
             </button>
-            <button
+            <!-- <button
               class="btn btn-outline-secondary mx-2"
               @click="open('github')"
               v-tooltip.bottom="'GitHub'"
+              :style="{ color: 'rgba(255, 255, 255, 0.8)'}"
             >
               <i class="fab fa-github"></i>
-            </button>
-            <button
+            </button> -->
+            <!-- <button
               class="btn btn-outline-secondary mx-2"
               @click="open('behance')"
               v-tooltip.bottom="'behance'"
+              :style="{ color: 'rgba(255, 255, 255, 0.8)'}"
             >
               <i class="fab fa-behance"></i>
-            </button>
-            <button
+            </button> -->
+            <!-- <button
               class="btn btn-outline-secondary mx-2"
               @click="open('resume')"
               v-tooltip.bottom="'Resume'"
+              :style="{ color: 'rgba(255, 255, 255, 0.8)'}"
             >
               <i class="fa fa-file"></i>
-            </button>
+            </button> -->
           </div>
         </div>
       </div>

@@ -32,7 +32,23 @@
           data-aos-mirror="true"
           data-aos-once="true"
         >
-          <div class="bg-div"><i :class="skill.icon"></i></div>
+          <div class="bg-div">
+            <span v-if="skill.isMaterial" class="icon-container">
+              <span 
+                class="material-icons" 
+                :class="skill.type"
+              > 
+                {{ skill.icon }}
+              </span>
+              <span class="cut-off-icon_before" :class="{ 'bg-white': !nightMode, 'bg-dark': nightMode}">
+
+              </span>
+              <span class="cut-off-icon_after" :class="{ 'bg-white': !nightMode, 'bg-dark': nightMode}">
+
+              </span>
+            </span>
+            <font-awesome-icon v-else class="font-awesome-icon" :icon="skill.icon"/>
+          </div>
           <div class="title2 pt-2">{{ skill.title }}</div>
           <hr
             width="50%"
@@ -83,7 +99,7 @@ export default {
   font-weight: 400;
 }
 
-.fa {
+/* .fa {
   color: #8585ad;
   font-size: 40px;
   transition: all 0.5s;
@@ -92,7 +108,43 @@ export default {
 .fas {
   color: #8585ad;
   font-size: 40px;
-  /* font-weight: bold; */
+  font-weight: bold;
   transition: all 0.5s;
+} */
+
+.font-awesome-icon, .material-icons {
+  color: #8585ad;
+  font-size: 40px;
+  transition: all 0.5s;
+}
+
+.icon-container {
+  position: relative;
+}
+
+.cut-off-icon_before, .cut-off-icon_after {
+  display: none;
+}
+
+.cut-off-icon ~ .cut-off-icon_before {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  bottom: 10px;
+  left: calc(100% - 8px);
+  /* background-color: red; */
+  transform: rotate(-10deg);
+}
+
+.cut-off-icon ~ .cut-off-icon_after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  bottom: 10px;
+  right: calc(100% - 8px);
+  /* background-color: red; */
+  transform: rotate(10deg);
 }
 </style>

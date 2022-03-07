@@ -26,12 +26,15 @@
       />
 
       <vue-tabs :activeTextColor="!nightMode ? '#535A5E' : '#dfdfdf'">
-        <v-tab title="development">
+        <v-tab
+          v-for="(category, index_) in portfolio_categories"
+          :key="index_"
+          :title="category">
           <br />
           <div class="row">
             <div
               class="col-xl-4 col-bg-4 col-md-6 col-sm-12"
-              v-for="(portfolio, idx) in portfolio_info"
+              v-for="(portfolio, idx) in portfolio_portfolios[index_]"
               :key="portfolio.name"
             >
               <Card
@@ -49,12 +52,12 @@
               />
             </div>
           </div>
-          <div class="text-center py-3" v-if="showBtn !== 'show less'">
-            <button class="btn" @click.prevent="showMore">{{ showBtn }}</button>
+          <div class="text-center py-3" v-if="portfolio_categories_showBtns[index_] !== 'show less'">
+            <button class="btn" @click.prevent="showMore(index_)">{{ portfolio_categories_showBtns[index_] }}</button>
           </div>
         </v-tab>
 
-        <v-tab title="design">
+        <!-- <v-tab title="design">
           <div class="row">
             <div
               v-for="(design, idx) in desgin_info"
@@ -106,7 +109,7 @@
             </div>
           </div>
           <br />
-        </v-tab>
+        </v-tab> -->
       </vue-tabs>
     </div>
     <transition name="modal">
@@ -134,7 +137,7 @@
 import Card from "./helpers/Card";
 import Modal from "./helpers/Modal";
 import DesignModal from "./helpers/DesignModal";
-import Carousel from "./helpers/Carousel";
+// import Carousel from "./helpers/Carousel";
 import info from "../../info";
 
 import { VueTabs, VTab } from "vue-nav-tabs";
@@ -164,13 +167,17 @@ export default {
       all_info: info.portfolio,
       desgin_info: info.portfolio_design,
       portfolio_info: [],
+      portfolio_categories: [],
+      portfolio_categories_numbers: [],
+      portfolio_categories_showers: [],
+      portfolio_categories_showBtns: [],
+      test: [1, 2, 3],
+      all_info_porfolios: [],
+      portfolio_portfolios: [],
       showModal: false,
       showDesignModal: false,
       modal_info: {},
       design_modal_info: {},
-      number: 3,
-      showBtn: "show more",
-      shower: 0,
       data: [
         '<div class="example-slide">Slide 1</div>',
         '<div class="example-slide">Slide 2</div>',
@@ -179,18 +186,62 @@ export default {
     };
   },
   created() {
-    for (var i = 0; i < this.number; i++) {
-      this.portfolio_info.push(this.all_info[i]);
-    }
-  },
-  watch: {
-    number() {
-      this.portfolio_info = [];
-      for (var i = 0; i < this.number; i++) {
-        this.portfolio_info.push(this.all_info[i]);
+    this.all_info.forEach(element => {
+      if(element.category && !this.portfolio_categories.includes(element.category.trim())) {
+        this.portfolio_categories.push(element.category.trim());
       }
-    },
+    });
+
+    for(let i = 0; i < this.portfolio_categories.length; i++) {
+      this.portfolio_categories_numbers.push(3);
+      this.portfolio_categories_showers.push(0);
+      this.portfolio_categories_showBtns.push("show more");
+      let element = this.all_info.filter(e => e.category.trim() === this.portfolio_categories[i]);
+      this.all_info_porfolios.push(element);
+      this.portfolio_portfolios[i] = [];
+      for(let k = 0; k < element.length && k < this.portfolio_categories_numbers[i]; k++) {
+        this.portfolio_portfolios[i].push(element[k]);
+      }
+    }
+
+    
+
+    // this.portfolio_categories_numbers.forEach(number => {
+    //   for (let i = 0; i < number; i++) {
+    //     this.portfolio_info.push(this.all_info[i]);
+    //   }
+    //   this.all_info.forEach(info => {
+
+    //   });
+    // });
+
+    // for(let i = 0; i < portfolio_categories_numbers.length; i++) {
+    //   let count = 0;
+    //   for(let j = 0; j < this.all_info.length; j++) {
+    //     if(this.all_info[j].category.trim() == this.portfolio_categories[i]) {
+    //       this.portfolio_info.push(this.all_info[j]);
+    //       count++;
+    //       if(count >= 3) break;
+    //     }
+    //   }
+    // }
   },
+  // watch: {
+  //   portfolio_categories_numbers: {
+  //     handler(new_, old_) {
+  //       // this.portfolio_info = [];
+  //       let index = 0;
+  //       for(let i = 0; i < old_.length; i++) {
+  //         if(old_[i] != new_[i]) {index = i; break;}
+  //       }
+  //       this.portfolio_portfolios[index] = [];
+  //       for (let i = 0; i < this.portfolio_categories_numbers[index]; i++) {
+  //         this.portfolio_portfolios[index].push(this.all_info[i]);
+  //       }
+  //     },
+  //     deep: true
+  //   },
+  // },
   methods: {
     next() {
       this.$refs.flickity.next();
@@ -212,29 +263,38 @@ export default {
       this.design_modal_info = design_portfolio;
       this.showDesignModal = true;
     },
-    showMore() {
-      if (this.number != this.all_info.length) {
-        this.number += 3;
+    rerender(index) {
+      this.portfolio_portfolios[index] = [];
+      for (let i = 0; i < this.portfolio_categories_numbers[index]; i++) {
+        this.portfolio_portfolios[index].push(this.all_info_porfolios[index][i]);
+      }
+      console.log(this.portfolio_portfolios[index]);
+      this.$forceUpdate();
+    },
+    showMore(index) {
+      if (this.portfolio_categories_numbers[index] != this.all_info_porfolios[index].length) {
+        this.portfolio_categories_numbers[index] += 3;
 
-        window.scrollBy({
-          top: document.getElementsByClassName("smcard")[0].clientHeight,
-          behavior: "smooth",
-        });
+        // window.scrollBy({
+        //   top: document.getElementsByClassName("smcard")[0].clientHeight,
+        //   behavior: "smooth",
+        // });
 
-        if (this.number > this.all_info.length)
-          this.number = this.all_info.length;
+        if (this.portfolio_categories_numbers[index] > this.all_info_porfolios[index].length)
+          this.portfolio_categories_numbers[index] = this.all_info_porfolios[index].length;
       }
 
-      if (this.number == this.all_info.length && this.shower == 0) {
-        this.shower = 1;
-        this.showBtn = "show less";
-      } else if (this.number == this.all_info.length && this.shower == 1) {
-        var elementPosition = document.getElementById("portfolio").offsetTop;
+      if (this.portfolio_categories_numbers[index] == this.all_info_porfolios[index].length && this.portfolio_categories_showers[index] == 0) {
+        this.portfolio_categories_showers[index] = 1;
+        this.portfolio_categories_showBtns[index] = "show less";
+      } else if (this.portfolio_categories_numbers[index] == this.all_info_porfolios[index].length && this.portfolio_categories_showers[index] == 1) {
+        let elementPosition = document.getElementById("portfolio").offsetTop;
         window.scrollTo({ top: elementPosition + 5, behavior: "smooth" });
-        this.shower = 0;
-        this.number = 3;
-        this.showBtn = "show more";
+        this.portfolio_categories_showers[index] = 0;
+        this.portfolio_categories_numbers[index] = 3;
+        this.portfolio_categories_showBtns[index] = "show more";
       }
+      this.rerender(index);
     },
   },
 };

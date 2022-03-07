@@ -8,6 +8,19 @@ import VueScrollTo from 'vue-scrollto'
 import VueRouter from 'vue-router'
 import VTooltip from 'v-tooltip'
 
+/* import the fontawesome core */
+import { library } from '@fortawesome/fontawesome-svg-core'
+
+/* import specific icons */
+import { faCode, faLaptopCode, faBone, faDatabase, faTableCells, faIgloo } from '@fortawesome/free-solid-svg-icons'
+
+/* import font awesome icon component */
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+/* add icons to the library */
+library.add(faCode, faLaptopCode, faBone, faDatabase, faTableCells, faIgloo);
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+
 var VueCookie = require('vue-cookie');
 
 Vue.use(VTooltip)

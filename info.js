@@ -1,7 +1,7 @@
 let info = {
-  name: "Mahy Mohab",
-  logo_name: "Mahy",
-  flat_picture: require("./src/assets/portrait.png"),
+  name: "Fuashi Lot-Bill Dulley",
+  logo_name: "Fuashi",
+  flat_picture: require("./src/assets/home-buildit.jpg"),
   config: {
     use_cookies: true,
     navbar: {
@@ -9,273 +9,218 @@ let info = {
     }
   },
   description:
-    "I'm Mahy Mohab, A senior Software Engineering student at KFS University with an interest in Software Development, UI/UX Design and Front-end developing. ",
+    "I'm Fuashi Lot-Bill, An expert in Building Construction and Maintainance. With over 7 years of experience in Building Construction, My team and I are the best fit for all your construction needs",
   links: {
-    linkedin: "www.linkedin.com/in/mahy-mohab-209",
-    github: "https://github.com/mahy209",
-    behance: "https://www.behance.net/mahymohab",
-    resume:
-      "https://drive.google.com/file/d/1yrJjc6q-X29qiW_UupooSq1hMTEwJLZ6/view?usp=sharing"
+    linkedin: "https://www.linkedin.com/in/lot-bill-dulley-fuashi/",
+    github: "https://github.com/dullbenz"
   },
   education: [
     {
-      name: "KFS University",
-      place: "Kafr Elsheikh",
-      date: "sep, 2018 - currently",
-      degree: "bachelor in software engineering",
+      name: "Ecole Nationale Superieure Polytechnique",
+      place: "Yaounde - Cameroon",
+      date: "Sep, 2016 - currently",
+      degree: "Masters in software engineering",
       gpa: "3.1/4.0",
       description:
         "",
       skills: [
-        "Software Engineering",
-        "web programming",
-        "UI/UX design",
-        "Front-end developing",
-        "C#"
+        "Building Construction",
+        "Roofing",
+        "Site Preparation and Levelling",
+        "Brick Masonry Work",
+        "Electrical and Plumbing"
       ]
+    },
+    {
+      name: "BGS Molyko",
+      place: "Buea - Cameroon",
+      date: "Sep, 2014 - June, 2016",
+      degree: "General Certificate of Education, Advanced Level",
+      gpa: "3.8/4.0",
+      description:
+        "",
     },
   ],
   experience: [
     {
-      name: "MONT",
-      place: "Kafr elSheikh, Egypt",
-      date: "July, 2021 - currently",
-      position: "ReactJS Engineer",
+      name: "Fuashi's Construction",
+      place: "Yaounde - Cameroon",
+      date: "July, 2015 - currently",
+      position: "Chief Executive Officer",
       description:
         "",
-      skills: ["HTML5", "CSS3", "Bootstrap", "JQuery", "Json", "JavaSript", "TypeSript", "es6", "VueJS"]
-    },
-    {
-      name: "ITI",
-      place: "Kafr elSheikh, Egypt",
-      date: "1,sep, 2021 - 28,sep, 2021",
-      position: "VueJS web developer",
-      description:
-        "",
-      skills: ["HTML5", "CSS3", "Bootstrap", "JQuery", "Json", "JavaSript", "TypeSript", "es6", "VueJS"]
-    },
-    {
-      name: "Udacity",
-      place: "Egypt",
-      date: "jun, 2021 - sep, 2021",
-      position: "React Web Developer",
-      description:
-        "",
-      skills: ["Javascript", "Typescript", "ReactJS", "React-Redux", "webpack", "NLP"]
-    },
-    {
-      name: "IEEE",
-      place: "Alexandria, Egypt",
-      date: "Jan, 2020 - Feb, 2020",
-      position: "Frontend Developer",
-      description:
-        "",
-      skills: ["HTML", "CSS", "JavaSript"]
-    },
+      skills: ["Site Preparation", "Brick Masonry", "Roofing", "Plumbing", "Electricals", "Tiling"]
+    }
   ],
   skills: [
     {
-      title: "Language",
+      title: "Roofing",
       info: [
-        "Python","Javascript","TypeScript","Java","C#"],
-      icon: "fa fa-code"
+        "Carpentary","Hammering","Alluminium sheeting"],
+      icon: "roofing",
+      isMaterial: true
     },
     {
-      title: "Front-end",
+      title: "Floors",
       info: [
-        "HTML5","CSS3","Bootstrap3","JQuery","Es6","json"],
-      icon: "fa fa-cubes"
+        "Tiling","Soft Cementing","Hard Cementing"],
+      icon: "grid_view",
+      isMaterial: true,
+      type: "material-icons-sharp cut-off-icon"
     },
     {
-      title: "web technologies",
-      info: ["Vue", "React", "Node"],
-      icon: "fas fa-laptop-code"
+      title: "Foundation",
+      info: ["Foundation tracing", "Site testing", "Brick Moulding", "Soil Reinforcement"],
+      icon: "foundation",
+      isMaterial: true,
+      type: "material-icons-round"
     },
     {
-      title: "Databases",
-      info: ["MongoDB", "MySQL", "SQL Server"],
-      icon: "fa fa-database"
+      title: "Walls",
+      info: ["Plastering", "Soft Plastering", "Sand Plastering", "Tiling"],
+      icon: "fa-solid fa-igloo"
     },
-    {
-      title: "Operating systems & tools",
-      info: [ "Ubuntu", "Windows", "Agile", "Scrum", "JIRA","Firebase"],
-      icon: "fas fa-tools"
-    },
-    {
-      title: "Design",
-      info: ["Illustrator", "XD", "Photoshop", "Gimp"],
-      icon: "fa fa-pencil-square-o"
-    }
   ],
   portfolio: [
     {
-      name: "Diary App",
+      name: "Hotel SINAHA Project",
       pictures: [
         {
-          img: require("./src/assets/portfolio/diary/1.png")
+          img: require("./src/assets/full/sinaha/sinaha0.jpg")
         },
         {
-          img: require("./src/assets/portfolio/diary/2.png")
+          img: require("./src/assets/full/sinaha/sinaha1.jpg")
         },
         {
-          img: require("./src/assets/portfolio/diary/3.png")
+          img: require("./src/assets/full/sinaha/sinaha2.jpg")
         },
       ],
-      technologies: ["react", "scss", "local storage"],
-      category: "Web App",
-      date: "Aug, 2021 - 20 days",
-      github:
-        "https://github.com/mahy209/notes-react-app.git",
-      visit: "https://github.com/mahy209/notes-react-app.git",
+      technologies: ["Building Construction", "Site Preparation", "Brick Masonry", "Electrical and Plumbing", "Tiling"],
+      category: "construction",
+      date: "Aug, 2020 - December, 2021",
       description:
-        " Diary react app with some new features: Dark mode, upload images, tags, filter search with title/content/tag "
+        " Full reconstruction of the SINAHA hotel located opposite Polytechnique Yaounde. We started the project from ground up to completion coupled with some degree of furnishing "
     },
     {
-      name: "Online Examination",
+      name: "Mountain Height Building Construction",
       pictures: [
         {
-          img: require("./src/assets/portfolio/online examination/exam (1).png")
+          img: require("./src/assets/full/mountain_height/cons0.jpg")
         },
         {
-          img: require("./src/assets/portfolio/online examination/exam (2).png")
+          img: require("./src/assets/full/mountain_height/cons1.jpg")
         },
         {
-          img: require("./src/assets/portfolio/online examination/exam (3).png")
-        },
-        {
-          img: require("./src/assets/portfolio/online examination/exam (4).png")
-        },
-        {
-          img: require("./src/assets/portfolio/online examination/exam (5).png")
+          img: require("./src/assets/full/mountain_height/cons2.jpg")
         }
       ],
-      technologies: ["HTML", "CSS","JavaSript","JQuery", "PHP", "MySQL"],
-      category: "Web App",
-      date: "Apr, 2021 - May, 2021",
-      github: "https://github.com/mahy209/online-examination.git",
-      visit: "https://github.com/mahy209/online-examination.git",
+      technologies: ["Site Preparation", "Brick Masonry", "Plastering", "Tiling"],
+      category: "construction",
+      date: "Aug, 2017 - May 2018",
       description:
-        "Online Examination System Today Online Examination System has become a fast growing examination method because of its speed and accuracy. It is also needed less manpower to execute the examination. Almost all organizations now-a-days, are conducting their objective exams by online examination system, it saves students time in examinations. Organizations can also easily check the performance of the student that they give in an examination. As a result of this, organizations are releasing results in less time. It also helps the environment by saving paper. According to today’s requirement, online examination project in php is very useful to learn it. What is an online examination system? In an online examination system examine get their user id and password with his/her admit card. This id is already saved in the examination server. When examine login to the server he/she get his/her profile already register. On the certain time examine gets the message to start the examination. All answers given by examine are saved into the server with his/her profile information. Online examination system also allows to correct the answer if the examine needed to change any answer in the examination time duration, however, after the time duration any change will not allow. This also makes c checking the answer easy and error proof as computers are more accurate than man and provide fast results too. Php is a web base language so we can create an online examination system in PHP. Administrator of Online Examination has multiple features such as Add, Delete, Update Topics and Question. To Login as Admin put inside your browser."
+        "The Mountain Height building located at Carrefour Biyemassi - Yaounde opposite General express is one of our very first projects which were carried successful and with great satisfaction from our client"
     },
     {
-      name: "MyFlix.com",
+      name: "Hotel la residence wall work",
       pictures: [
         {
-          img: require("./src/assets/portfolio/myflix.com/1.png")
-        },
-        {
-          img: require("./src/assets/portfolio/myflix.com/2.png")
-        },
-        {
-          img: require("./src/assets/portfolio/myflix.com/3.png")
-        },
-        {
-          img: require("./src/assets/portfolio/myflix.com/4.png")
-        },
-      ],
-      technologies: ["react", "css", "TMDB"],
-      category: "Web App",
-      date: "Aug, 2021 - 10 days",
-      github:
-        "https://github.com/mahy209/MyFlix-react-app.git",
-      visit: "https://github.com/mahy209/MyFlix-react-app.git",
-      description:
-        " flix.com is a netflix clone using React JS and TMDB with courusal and search engine. "
-    },
-  ],
-  portfolio_design: [
-    {
-      name: "Examia",
-      title: "Online Examination - UI Design",
-      pictures: [
-        {
-          img: require("./src/assets/designs/online examination/exam (2).png"),
-          title: "MoodBoard"
-        },
-        {
-          img: require("./src/assets/designs/online examination/exam (1).png"),
-          title: "Mockups 1"
-        },
-        {
-          img: require("./src/assets/designs/online examination/exam (3).png"),
-          title: "Mockups 2"
-        },
-        {
-          img: require("./src/assets/designs/online examination/exam (4).png"),
-          title: "App Elements"
-        },
-        {
-          img: require("./src/assets/designs/online examination/exam (5).png"),
-          title: "App Elements"
-        },
-        {
-          img: require("./src/assets/designs/online examination/exam (6).png"),
-          title: "App Elements"
+          img: require("./src/assets/walls/wall00.png")
         }
       ],
-      technologies: ["XD", "Photoshop"],
-      category: "Visual Design",
-      github: "",
-      date: "Jan, 2021 - Feb, 2021",
-      visit: "",
+      technologies: ["Soft Plastering", "Plastering", "wall design"],
+      category: "walls",
+      date: "June 2018 - 3 weeks",
       description:
-        " Examia is a open source project , <br> <br> with Ui/UX design and full stack developing(HTML/CSS/JQuery/PHP)."
+        "A top notch wall desing conceived for Hotel La Residence situated opposite Polytech Yaounde"
     },
     {
-      name: "Pill Reminder",
-      title: "Pill Reminder - Mockup Design",
+      name: "Eta Palace Hotel Walls",
       pictures: [
         {
-          img: require("./src/assets/designs/pill reminder/Web 1.png"),
-          title: "Moodboard"
-        },
-        {
-          img: require("./src/assets/designs/pill reminder/1.png"),
-          title: "Mockups 1"
-        },
-        {
-          img: require("./src/assets/designs/pill reminder/2.png"),
-          title: "Mockups 2"
+          img: require("./src/assets/walls/wall0.jpg")
         }
       ],
-      technologies: ["XD", "Illustrator"],
-      category: "Visual Design",
-      github: "",
-      date: "Apr, 2021 - Apr, 2021",
-      visit: "",
+      technologies: ["brick work"],
+      category: "walls",
+      date: "Aug 2016 - September 2016",
       description:
-        "pill reminder app for nessecary drugs for the day."
+        "Interior redesign of Eta Palace Hotel - Buea walls"
     },
     {
-      name: "Taxes Burger",
-      title: "Taxes Burger - UI design",
+      name: "HIMS Buea Exterior walls",
       pictures: [
         {
-          img: require("./src/assets/designs/burger/Web 1 (1).jpg"),
-          title: "Moodboard"
-        },
-        {
-          img: require("./src/assets/designs/burger/Web 1 (1).png"),
-          title: "Mockup 1"
-        },
-        {
-          img: require("./src/assets/designs/burger/Web 1 (2).png"),
-          title: "Mockup 2"
-        },
-        {
-          img: require("./src/assets/designs/burger/Web 1 (3).png"),
-          title: "Mockup 3"
-        },
+          img: require("./src/assets/walls/wall2.jpg")
+        }
       ],
-      technologies: ["XD", "Illustrator"],
-      category: "Visual Design",
-      github: "",
-      date: "May, 2021 - May, 2021",
-      visit: "",
+      technologies: ["concrete art"],
+      category: "walls",
+      date: "Aug 2019 - September 2019",
       description:
-        " Burger restuarant UI design"
+        "The project here was to build the fence and external walls of the classrooms for HIMS Buea. The standing fence is a masterpiece"
+    },
+    {
+      name: "Roofing at Mr. Eret Roland's Residence",
+      title: "Mr. Eret Roland's Residence",
+      pictures: [
+        {
+          img: require("./src/assets/roofing/roland/roland0.jpg"),
+          title: "Top View"
+        },
+        {
+          img: require("./src/assets/roofing/roland/roland1.jpg"),
+          title: "Side View"
+        },
+        {
+          img: require("./src/assets/roofing/roland/roland2.jpg"),
+          title: "Front View"
+        }
+      ],
+      technologies: ["Alluminium sheeting", "Sheet manipulation","Carpentary","Hammering"],
+      category: "roofing",
+      date: "Apr, 2019 - May, 2019",
+      description:
+      "We provided a state of the art Roof Structure comprising of the most durable roofing sheets, plated with fortified stainless steel and carefully painted to the taste of the client."
+    },
+    {
+      name: "New Layout Roofing at Nkol Bisson - Yaounde",
+      title: "New Layout at Nkol Bisson",
+      pictures: [
+        {
+          img: require("./src/assets/roofing/new_layout/general-view.jpg"),
+          title: "General View"
+        },
+        {
+          img: require("./src/assets/roofing/new_layout/side-view.jpg"),
+          title: "Side View"
+        },
+        {
+          img: require("./src/assets/roofing/new_layout/front-view.jpg"),
+          title: "Front View"
+        }
+      ],
+      technologies: ["Alluminium sheeting", "Sheet manipulation","Carpentary","Hammering"],
+      category: "roofing",
+      date: "Apr, 2020 - May, 2020",
+      description:
+      "Newly constructed house in new layout section of Nkol Bisson Roof snapshot"
+    },
+    {
+      name: "St Peter and Paul Parish Buea town, Roofing",
+      title: "St Peter and Paul Parish",
+      pictures: [
+        {
+          img: require("./src/assets/roofing/bueatown_parish/church.jpg"),
+          title: "Top View"
+        }
+      ],
+      technologies: ["Alluminium sheeting", "Sheet manipulation","Carpentary","Hammering"],
+      category: "roofing",
+      date: "Jan, 2021 - May, 2021",
+      description:
+      "The Project for the roofing of this parish was quite challenging as we faced indadequate material but we conceived a solution to this problem which proved to efficient. Contact us to find out how we did it?"
     }
-  ],
+  ]
 };
 
 export default info;
